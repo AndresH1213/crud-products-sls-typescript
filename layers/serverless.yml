@@ -1,0 +1,19 @@
+service: product-layers-test
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+layers:
+  LayerFuncionProductTest:
+    path: modules
+    description: "layer test to typescript product api"
+
+resources:
+  Outputs:
+    ArnLayerTypescriptNodeTest:
+      Value:
+        Ref: LayerFuncionProductTestLambdaLayer
+      Export:
+        Name: LayerFuncionProductTestARN
