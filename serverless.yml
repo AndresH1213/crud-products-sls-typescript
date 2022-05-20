@@ -67,6 +67,8 @@ functions:
       - httpApi:
           path: /product/{productID}
           method: get
+    layers:
+      - Fn::ImportValue: LayerFuncionProductTestARN
   updateProduct:
     handler: src/handlers/updateProduct.handler
     events:
